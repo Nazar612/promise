@@ -22,4 +22,29 @@ promise.then((value) => {
 })
 }).finally(()=> {
     console.log("Щось відбулося");
-})
+});
+
+
+
+function getUserData(username) {
+    const newPromise = new Promise((resolve, error) => {
+        setTimeout(()=> {
+        const randomNum = Math.random() > 0.5;
+        if(randomNum) {
+            resolve(username)
+        }else{
+            error("Not uspix");
+        }
+    }, 2000);
+    });
+
+    return newPromise
+};
+
+getUserData("Artem").then((value) => {
+    console.log(value);
+}).catch((error)=> {
+    console.log(error);
+});
+
+console.log(getUserData("Artem"));
