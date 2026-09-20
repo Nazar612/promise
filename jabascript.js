@@ -48,3 +48,5 @@ getUserData("Artem").then((value) => {
 });
 
 console.log(getUserData("Artem"));
+
+//Підключіть До хтмл нужно
